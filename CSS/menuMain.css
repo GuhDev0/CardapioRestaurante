@@ -1,0 +1,242 @@
+:root {
+  --color-background: #fffdf7;
+  --color-black: #212121;
+  --color-black-heavy: #000000;
+  --color-text: #4f4f4f;
+  --color-text-out: #90908e;
+  --color-primary: #ffbf00;
+  --color-secondary: #fff2cc;
+  --color-white: #ffffff;
+  --color-red: #e74c3c;
+  --color-green: #2ecc71;
+  --color-separate: #cccccc;
+}
+.btn {
+  width: 220px;
+  background-color: var(--color-white);
+  border: none;
+  height: 55px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  transition: 0.5s;
+  box-shadow: rgba(88, 90, 90, 0) 0px 2px 4px 0px,
+    rgba(136, 136, 136, 0.32) 0px 2px 16px 0px;
+}
+.limite-largura {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.section-margin-top {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+html,
+body {
+  font-family: "PoppinsRegular", "Rubik", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+/*Cabeçalho*/
+
+.cabecalho {
+  width: 100%;
+}
+
+.container-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-cabecalho .container-logo {
+  width: 15%;
+}
+.container-cabecalho .container-logo img {
+  width: 100%;
+}
+.container-cabecalho .list {
+  display: flex;
+  gap: 100px;
+}
+.container-cabecalho .list a {
+  color: var(--color-black);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.cabecalho .cabecalho-btn:hover,
+.container-burguer .container-button .btn-tel:hover,
+.icons svg:hover {
+  background-color: var(--color-primary);
+}
+.cabecalho .cabecalho-btn svg,
+.container-button .btn-tel svg,
+.icons svg {
+  width: 38px;
+  background-color: var(--color-primary);
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 15px;
+}
+.cabecalho .cabecalho-btn p {
+  font-size: 1.2rem;
+  color: var(--color-black-heavy);
+}
+
+/*Section Burguer-Text*/
+.container-burguer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-burguer .burguer-text h1 {
+  font-size: 3.6rem;
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+.container-burguer .burguer-text h1 strong {
+  color: var(--color-primary);
+}
+.container-burguer .burguer-text p {
+  font-size: 1.4rem;
+  line-height: 30px;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.container-burguer .container-button {
+  display: flex;
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.container-burguer .container-button .btn-cardapio {
+  background-color: var(--color-primary);
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--color-white);
+  width: 30%;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.container-button .btn-tel {
+  width: 240px;
+  justify-content: space-between;
+}
+.container-button .btn-tel p {
+  font-size: 1.2rem;
+  width: 200px;
+  height: 80%;
+}
+.container-button .btn-tel svg {
+  width: 45px;
+}
+
+/*CONTAINER ICONS */
+
+.icons {
+  width: 220px;
+  display: flex;
+  gap: 40px;
+}
+.icons svg {
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-white);
+  border-radius: 13px;
+  padding: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition: 0.5s;
+
+}
+
+/*ASIDE CONTAINER-BURGUER*/
+.burguer{
+    position: relative;
+    z-index: 1;
+}
+.burguer img{
+    z-index: 1 ;
+    position: relative;
+}
+.burguer .background-burguer{
+    width: 480px;
+    height: 480px;
+    border-radius: 40%;
+    background-color: #f4c949;
+   position: absolute;
+   right: -30px;
+   top: -80px;
+   z-index: 0;
+}
+.burguer .box-text{
+    position: absolute;
+    right: -50px;
+    bottom: -50px ;
+    z-index: 1;
+    background-color: var(--color-white);
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+   font-weight: bolder;
+    color: var(--color-text);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition: 0.5s;
+
+}
+.burguer .box-text strong{
+    color: var(--color-primary);
+    display: flex;
+    justify-content: end;
+}
+
+
+/*SECTION SERVIÇOS/CARDAPIO*/
+
+.sub-titulo{
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 10px 0;
+}
+.third-title{
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-black);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/*SERVICES */
+
+.card-service{
+    background-color: #2ecc71;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.card-service img{
+    width: 50%;
+    
+}
+.txt-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffbf00;
+    height: 100px;
+
+}
