@@ -1,0 +1,19 @@
+@media (max-width:800px){
+    /*header*/
+    .nav-list{
+        display: none;
+    }
+    .cabecalho-btn{
+            display: none;
+    }
+    .hambuguer{
+        display: block;
+    }
+    .container-cabecalho{
+        padding: 20px;
+    }
+    .container-cabecalho .container-logo img{
+        width: 150px;
+        height: auto;
+    }
+}

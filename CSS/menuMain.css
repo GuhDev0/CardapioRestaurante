@@ -13,6 +13,7 @@
 }
 .btn {
   width: 220px;
+  cursor: pointer;
   background-color: var(--color-white);
   border: none;
   height: 55px;
@@ -47,16 +48,33 @@ body {
 .cabecalho {
   width: 100%;
 }
-
+.hambuguer{
+  display: none;
+  border: none;
+  background-color: var(--color-white);
+  border-top: 3px solid var(--color-black-heavy);
+  cursor: pointer;
+}
+.hambuguer::before,
+.hambuguer::after{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: var(--color-black-heavy);
+}
 .container-cabecalho {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.container-cabecalho .container-logo {
+.container-cabecalho .container-logo,
+footer .container-logo {
   width: 15%;
 }
-.container-cabecalho .container-logo img {
+.container-cabecalho .container-logo img,
+footer .container-logo img {
   width: 100%;
 }
 .container-cabecalho .list {
@@ -70,7 +88,9 @@ body {
 }
 .cabecalho .cabecalho-btn:hover,
 .container-burguer .container-button .btn-tel:hover,
-.icons svg:hover {
+.icons svg:hover,
+.select-cardapio .btn-select-cardapio:hover,
+.depoimentos-text .depoimento-btn-select .btn-select-depoimento:hover{
   background-color: var(--color-primary);
 }
 .cabecalho .cabecalho-btn svg,
@@ -115,7 +135,9 @@ body {
   margin-top: 60px;
 }
 
-.container-burguer .container-button .btn-cardapio {
+.container-burguer .container-button .btn-cardapio,
+.section-reserva .card .btn-reserva
+ {
   background-color: var(--color-primary);
   align-items: center;
   font-size: 1.3rem;
@@ -153,90 +175,306 @@ body {
   padding: 10px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    transition: 0.5s;
-
+  transition: 0.5s;
 }
 
 /*ASIDE CONTAINER-BURGUER*/
-.burguer{
-    position: relative;
-    z-index: 1;
+.burguer {
+  position: relative;
+  z-index: 1;
 }
-.burguer img{
-    z-index: 1 ;
-    position: relative;
+.burguer img {
+  z-index: 1;
+  position: relative;
 }
-.burguer .background-burguer{
-    width: 480px;
-    height: 480px;
-    border-radius: 40%;
-    background-color: #f4c949;
-   position: absolute;
-   right: -30px;
-   top: -80px;
-   z-index: 0;
+.burguer .background-burguer {
+  width: 480px;
+  height: 480px;
+  border-radius: 40%;
+  background-color: #f4c949;
+  position: absolute;
+  right: -30px;
+  top: -80px;
+  z-index: 0;
 }
-.burguer .box-text{
-    position: absolute;
-    right: -50px;
-    bottom: -50px ;
-    z-index: 1;
-    background-color: var(--color-white);
-    padding: 12px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-   font-weight: bolder;
-    color: var(--color-text);
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+.burguer .box-text {
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  z-index: 1;
+  background-color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bolder;
+  color: var(--color-text);
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    transition: 0.5s;
-
+  transition: 0.5s;
 }
-.burguer .box-text strong{
-    color: var(--color-primary);
-    display: flex;
-    justify-content: end;
+.burguer .box-text strong {
+  color: var(--color-primary);
+  display: flex;
+  justify-content: end;
 }
-
 
 /*SECTION SERVIÇOS/CARDAPIO*/
 
-.sub-titulo{
-    color: var(--color-primary);
-    text-align: center;
-    font-size: 1.4rem;
-    padding: 10px 0;
+.sub-titulo {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 10px 0;
 }
-.third-title{
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--color-black);
-    font-size: 2rem;
-    font-weight: bold;
+.third-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-black);
+  font-size: 2rem;
+  font-weight: bold;
 }
-
 
 /*SERVICES */
+.container-img-services {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url(../img/icon/bg-icons-2.png);
+  background-position: top;
+  background-size: cover;
+}
+.card-service {
+  width: 300px;
+  max-height: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
 
-.card-service{
-    background-color: #2ecc71;
-    width: 300px;
-    height: 300px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+.txt-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.card-service img{
-    width: 50%;
-    
+
+.txt-card h4 {
+  font-size: 1.6rem;
+  color: var(--color-black-heavy);
+  padding: 10px;
 }
-.txt-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: #ffbf00;
-    height: 100px;
+.txt-card p {
+  line-height: 20px;
+  color: var(--color-text-out);
+}
+
+/*SECTION CARDAPIO*/
+
+.select-cardapio {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.select-cardapio .icon-select {
+  width: 20px;
+  height: 20px;
+}
+.select-cardapio .btn-select-cardapio {
+  width: 160px;
+  height: 50px;
+  color: var(--color-black-heavy);
+  
+}
+
+/*Container card Cardapio*/
+.cardapio {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-cardapio {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  width: 250px;
+  border-radius: 25px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  box-shadow: rgba(88, 90, 90, 0) 0px 2px 4px 0px,
+  rgba(136, 136, 136, 0.32) 0px 2px 16px 0px;
+}
+.card-cardapio:hover
+{
+  background-color: var(--color-primary);
+}
+
+.card-cardapio img {
+  width: 100%;
+  height: auto;
+}
+.card-cardapio h4{
+  padding: 20px 0 ;
+  font-size: 22px;
+  color: var(--color-black-heavy);
+}
+.card-cardapio p{
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*SECTION DEPOIMENTOS*/
+.section-depoimentos{
+  display: flex;
+  background-image: url(../img/icon/bg-icons-2.png);
+  
+}
+.section-depoimentos .sub-titulo{
+  text-align: justify;
+}
+.section-depoimentos .third-title{
+  text-transform: lowercase;
+  font-size: 2.5rem;
+  text-align: justify;
+}
+.section-depoimentos .box-pizza{
+  position: relative;
+}
+.section-depoimentos .box-pizza img{
+position: relative;
+  z-index: 1;
+}
+.section-depoimentos .box-pizza .background-pizza{
+  width: 380px;
+  height: 350px;
+  border-radius: 40%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  right: 90px;
+  top: -10px;
+  z-index: 0;
+}
+
+/*SECTION PESSOA DEPOIMENTO*/
+ 
+
+.depoimentos-text .informação-pessoa{
+  
+  display: flex;
+}
+.informação-pessoa .pessoa-img{
+  width: 80px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  
+}
+
+.informação-pessoa .pessoa-name{
+  font-size: 1.4rem;
+  color: var(--color-black);
+  font-weight: bolder;
+}
+.informação-pessoa .pessoa-star-icon{
+  display: flex;
+  gap: 5px;
+  padding: 10px 0;
+}
+.informação-pessoa  .pessoa-text{
+  line-height: 25px;
+  color: var(--color-black);
+  font-size: 1.2rem;
+}
+.depoimentos-text .depoimento-btn-select{
+  display: flex;
+  gap: 20px;
+}
+.depoimentos-text .depoimento-btn-select .btn-select-depoimento{
+  width: 50px;
 
 }
+
+/*SECTION RESERVA*/
+
+.section-reserva{
+  width: 100%;
+  border-radius: 80px;
+  height: 450px;
+  display: flex;
+  
+  background-color: var(--color-secondary);
+}
+
+.section-reserva .card{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  padding: 60px; 
+  justify-content: space-between;
+}
+.section-reserva .card .sub-titulo{
+  text-align: justify;
+  font-size: 1.5rem;
+}
+.section-reserva .card .third-title{
+  text-align: justify;
+  text-transform:capitalize;
+  font-size: 3rem;
+  padding: 5px 0 40px 0 ;
+}
+.section-reserva .card  p {
+  color: var(--color-text);
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+}
+.section-reserva .card .btn-reserva{
+  width: 180px;
+}
+.section-reserva .card .box-reserva{
+  height: 100%;
+  width: 100%;
+  
+}
+.section-reserva .card .box-img-reserva{
+  position: relative;
+  z-index: 1;
+}
+.section-reserva .card  .box-img-reserva img{
+  width: 100%;
+ position: relative;
+  height: auto;
+}
+.background{
+  width: 330px;
+  height: 330px;
+  border-radius: 40%;
+  background-color: var(--color-white);
+  position: absolute;
+  z-index: 0;
+  top: -30px;
+  right: 5px;
+}
+
+/*FOOTER*/
+
+footer{
+  margin-top: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--color-secondary);
+}
+footer .icons {
+  padding-bottom: 50px;
+}
+
+
